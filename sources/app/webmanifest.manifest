@@ -1,0 +1,24 @@
+{
+  "id": "../../admin_login.html",
+  "name": "Balay Bato Hotel Admin",
+  "short_name": "BB Admin",
+  "description": "Balay Bato Hotel administration app.",
+  "start_url": "../../admin_login.html",
+  "scope": "../../",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "lang": "en",
+  "prefer_related_applications": false,
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "../../images/app_logo.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

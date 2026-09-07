@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balay Bato Hotel | Log In</title>
+<link rel="icon" type="image/jpeg" href="images/app_logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sources/loginForm/login.css">
+
+</head>
+<body>
+
+<div class="login-page">
+
+  <!-- LEFT: BRAND / BENTO ILLUSTRATION -->
+  <div class="brand-panel slide-1" id="brandPanel">
+    <div class="top-mark">
+      <div class="brand-mark"><img src="images/app_logo.jpg" alt="Balay Bato Hotel logo"></div>
+      <span class="brand-name">Balay Bato Hotel</span>
+    </div>
+
+    <div class="bento-scene" id="bentoScene">
+      <div class="scene-inner" id="sceneInner">
+        <div class="float-card fc-main">
+          <div class="fc-img"><img src="images/L1.jpg" alt="Garden Suite at Balay Bato Hotel"></div>
+        </div>
+        <div class="float-card fc-icon" id="fcIconWrap">
+          <img src="images/app_logo.jpg" alt="Balay Bato Hotel logo">
+        </div>
+        <div class="float-card fc-mini">
+          <img src="images/LA.jpg" alt="Balay Bato Hotel room">
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-copy">
+      <h2 id="slideTitle">Every stay, from booking to check-out, in one place.</h2>
+      <p id="slideSub">Browse rooms, see real-time availability, and compare rates in seconds.</p>
+      <div class="brand-dashes" id="slideDashes"><span class="on"></span><span></span><span></span></div>
+
+      <div class="intro-nav">
+        <button type="button" class="intro-skip" id="introSkipBtn">Skip</button>
+        <div class="intro-dots" id="introDots"><span class="on"></span><span></span><span></span></div>
+        <button type="button" class="intro-next" id="introNextBtn">
+          Next
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: LOGIN FORM -->
+  <div class="form-panel">
+    <div class="form-wrap">
+      <button type="button" class="back-link" id="backIntroBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+      </button>
+      <div class="form-logo">
+        <div class="brand-mark"><img src="images/app_logo.jpg" alt="Balay Bato Hotel logo"></div>
+      </div>
+      <div class="form-head">
+        <h1 id="formTitle">Hello There!</h1>
+        <p id="formSub">Log in to browse rooms, reserve, and track your stay.</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="signup-only" id="signupFields">
+          <div class="field"><label>Full name</label><input type="text" id="fullName" placeholder="Your full name" disabled></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" id="email" placeholder="your@email.com" required></div>
+        <div class="field"><label>Password</label><input type="password" id="password" placeholder="Enter your password" required></div>
+        <div class="field signup-only">
+          <label>Confirm password</label>
+          <input type="password" id="confirmPassword" placeholder="Re-enter your password" disabled>
+          <small id="passwordMatchMessage" class="password-match-message" aria-live="polite"></small>
+        </div>
+        <div class="field-meta">
+          <label class="remember"><input type="checkbox" id="showPassword"> Show password</label>
+          <a href="#" class="forgot" id="forgotPasswordLink">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary" id="authSubmitBtn">Log in</button>
+      </form>
+
+      <div class="or-row">or continue with</div>
+      <div class="social-row">
+        <button class="social-btn" id="googleLoginBtn" type="button">
+          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.85Z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.66 2.85C6.71 7.3 9.14 5.38 12 5.38Z"/></svg>
+          Google
+        </button>
+        <button class="social-btn" id="facebookLoginBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
+          Facebook
+        </button>
+      </div>
+
+      <div class="switch-line" id="switchLine">Don't have an account? <a href="#" id="signupLink">Sign up</a></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="sources/shared/database.js"></script>
+<script src="sources/loginForm/login.js"></script>
+
+</body>
+</html>

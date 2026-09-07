@@ -1,0 +1,24 @@
+{
+  "id": "../../frontdesk.html",
+  "name": "Balay Bato Front Desk",
+  "short_name": "BB Front Desk",
+  "description": "Balay Bato Hotel front desk app.",
+  "start_url": "../../frontdesk.html",
+  "scope": "../../",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "lang": "en",
+  "prefer_related_applications": false,
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "../../images/app_logo.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

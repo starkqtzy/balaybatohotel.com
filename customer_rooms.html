@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balay Bato Hotel | Browse Rooms</title>
+<link rel="icon" type="image/jpeg" href="images/app_logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=700&q=75" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sources/customer/customer.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="index.html#home" class="brand-row">
+        <div class="brand-mark"><img src="images/app_logo.jpg" alt="Balay Bato Hotel logo"></div>
+        <span class="brand-name">Balay Bato Hotel</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="#rooms" class="active">Rooms</a>
+        <a href="customer_reserve.html">Reserve</a>
+        <a href="customer_track.html">Track</a>
+      </nav>
+      <div class="nav-actions">
+        <div id="guestActions"><button class="btn btn-primary btn-sm login-btn" onclick="openAuth('login')"><svg class="login-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg><span>Log in / Sign up</span></button></div>
+        <div id="userActions" style="display:none;">
+          <button type="button" class="user-chip" aria-label="Open profile menu" onclick="toggleUserMenu(event)">
+            <span class="av" id="userAvatar">A</span>
+            <span class="nm" id="userName">Guest</span>
+          </button>
+          <div class="user-menu" id="userMenu">
+            <button type="button" onclick="openProfile()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Profile</button>
+            <button type="button" class="logout-action" onclick="logoutUser();closeUserMenu()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log out</button>
+          </div>
+        </div>
+        <button class="hamburger" aria-label="Open navigation menu" onclick="document.getElementById('mobileMenu').classList.toggle('open');document.getElementById('mobileMenuBackdrop').classList.toggle('open')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-menu-close" aria-label="Close navigation menu" onclick="document.getElementById('mobileMenu').classList.remove('open');document.getElementById('mobileMenuBackdrop').classList.remove('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <a href="index.html#home">Home</a>
+      <a href="#rooms" class="active">Rooms</a>
+      <a href="customer_reserve.html">Reserve</a>
+      <a href="customer_track.html">Track</a>
+    </div>
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" onclick="document.getElementById('mobileMenu').classList.remove('open');this.classList.remove('open')"></div>
+  </div>
+</header>
+
+<section id="rooms" style="background:#EBEBEB; padding-top:52px;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Browse rooms</div>
+      <h2>Find your room</h2>
+      <p>Availability updates in real time from the front desk. Rooms under maintenance or currently occupied can't be reserved yet.</p>
+    </div>
+    <div class="filter-row" id="roomFilters">
+      <button class="pill active" data-status="all">All rooms</button>
+      <button class="pill" data-status="available">Available</button>
+      <button class="pill" data-status="occupied">Occupied</button>
+      <button class="pill" data-status="maintenance">Maintenance</button>
+    </div>
+    <div class="bento" id="roomsGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">
+        <div class="brand-mark"><img src="images/app_logo.jpg" alt="Balay Bato Hotel logo"></div>
+        <span class="brand-name">Balay Bato Hotel</span>
+      </div>
+      <p>A quiet, comfortable stay with simple, cashless online booking — book in minutes, pay by e-wallet, and track your reservation status.</p>
+    </div>
+    <div><h4>Explore</h4><ul><li><a href="customer_rooms.html">Browse rooms</a></li><li><a href="index.html#reserve">Reserve</a></li><li><a href="customer_track.html">Track reservation</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>T. Claudio, Barangay Kalanggaman, Bato, 6525 Leyte, PH</li><li>balaybatohotel@gmail.com</li><li>0998 230 6447</li></ul></div>
+  </div>
+  <div class="wrap foot-bottom">© 2026 Balay Bato Hotel. All rights reserved.</div>
+</footer>
+
+<div class="modal-overlay" id="authOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('authOverlay')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h3>Welcome to Balay Bato</h3>
+    <p class="sub" id="authSub">Log in or create an account to reserve a room.</p>
+    <div class="tab-row">
+      <button class="tab-btn active" id="tabLogin" onclick="switchAuthTab('login')">Log in</button>
+      <button class="tab-btn" id="tabSignup" onclick="switchAuthTab('signup')">Sign up</button>
+    </div>
+
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <div class="field"><label>Email</label><input type="email" id="liEmail" placeholder="you@email.com" required></div>
+      <div class="field"><label>Password</label><input type="password" id="liPass" placeholder="••••••••" required></div>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+
+    <form id="signupForm" style="display:none;" onsubmit="return handleSignup(event)">
+      <div class="field"><label>Full name</label><input type="text" id="suName" placeholder="Juan Dela Cruz" required></div>
+      <div class="field"><label>Email</label><input type="email" id="suEmail" placeholder="you@email.com" required></div>
+      <div class="field"><label>Phone</label><input type="tel" id="suPhone" placeholder="09xx xxx xxxx" required></div>
+      <div class="field"><label>Password</label><input type="password" id="suPass" placeholder="••••••••" required></div>
+      <button type="submit" class="btn btn-primary btn-block">Create account</button>
+    </form>
+
+    <div class="or-row">or continue with</div>
+    <button class="social-btn" onclick="socialLogin('Facebook')">
+      <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
+      Continue with Facebook
+    </button>
+    <button class="social-btn" onclick="socialLogin('Google')">
+      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.85Z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.66 2.85C6.71 7.3 9.14 5.38 12 5.38Z"/></svg>
+      Continue with Google
+    </button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="reserveOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('reserveOverlay')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+
+    <div id="reserveStep1">
+      <h3 id="resRoomTitle">Reserve room</h3>
+      <p class="sub">Fill in your stay details.</p>
+      <form onsubmit="return goToPayment(event)">
+        <div class="field-row">
+          <div class="field"><label>Check-in</label><input type="date" id="resIn" required></div>
+          <div class="field"><label>Check-out</label><input type="date" id="resOut" required></div>
+        </div>
+        <div class="field"><label>Guests</label><input type="number" id="resGuests" min="1" value="2" required></div>
+        <div class="field"><label>Contact number</label><input type="tel" id="resContact" placeholder="09xx xxx xxxx" required></div>
+        <button type="submit" class="btn btn-primary btn-block">Continue to payment</button>
+      </form>
+    </div>
+
+    <div id="reserveStep2" style="display:none;">
+      <h3>Pay with e-wallet</h3>
+      <p class="sub">Send payment to the account below, then confirm your reference number.</p>
+      <div class="wallet-grid" id="walletGrid">
+        <button type="button" class="wallet-opt on" data-w="GCash">GCash</button>
+        <button type="button" class="wallet-opt" data-w="Maya">Maya</button>
+        <button type="button" class="wallet-opt" data-w="GoTyme">GoTyme</button>
+        <button type="button" class="wallet-opt" data-w="PayMaya QR">Bank QR</button>
+      </div>
+      <div class="pay-info">
+        <b>Balay Bato Hotel — <span id="walletName">GCash</span></b>
+        Send to 0917 000 1234 · Ref: your name + room number
+      </div>
+      <form onsubmit="return submitReservation(event)">
+        <div class="field"><label>Payment reference number</label><input type="text" id="resRef" placeholder="e.g. 0123456789012" required></div>
+        <div class="field">
+          <label>Upload proof of payment (screenshot)</label>
+          <label class="file-drop" id="fileDrop">
+            <span id="fileDropText">Tap to upload image</span>
+            <input type="file" accept="image/*" style="display:none" onchange="handleProof(event)">
+          </label>
+        </div>
+        <div class="summary-row"><span>Room</span><span id="sumRoom">—</span></div>
+        <div class="summary-row"><span>Nights</span><span id="sumNights">—</span></div>
+        <div class="summary-row"><span>Total</span><span id="sumTotal">—</span></div>
+        <button type="submit" class="btn btn-accent btn-block" style="margin-top:14px;">Submit reservation</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="sources/shared/database.js"></script>
+<script src="sources/shared/messages.js"></script>
+<script src="sources/customer/customer.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+:root {
+  --white: #fff;
+  --teal: #00c2c7;
+  --teal-deep: #00888c;
+  --peach: #fff2e5;
+  --ink: #14171a;
+  --ink-soft: rgba(20, 23, 26, .62);
+  --line: rgba(20, 23, 26, .1);
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { min-height: 100%; margin: 0; }
+body {
+  min-width: 320px;
+  color: var(--ink);
+  background: var(--white);
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.app-install-card { margin-top: 22px; padding-top: 17px; border-top: 1px solid rgba(0, 0, 0, .1); display: grid; gap: 7px; }
+.app-install-card strong { color: var(--teal-deep); font-family: Manrope, system-ui, sans-serif; font-size: 13px; }
+.app-install-card span { color: #66706f; font-size: 11px; line-height: 1.45; }
+.app-install-button { width: 100%; min-height: 38px; padding: 9px 14px; color: #fff; border: 0; border-radius: 10px; background: var(--teal); font-size: 12px; font-weight: 700; }
+.app-install-button[data-windows-install] { color: var(--teal-deep); background: #e7f7f5; }
+.app-install-card small { color: var(--teal-deep); font-size: 10px; font-weight: 700; }
+
+.login-page { min-height: 100vh; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; padding: 0; }
+.welcome-panel { position: relative; min-height: 100vh; overflow: hidden; background: linear-gradient(135deg, rgba(0, 194, 199, .86), rgba(0, 132, 136, .86)), url('../../images/cover_bbh.jpg') center / cover; }
+.welcome-overlay { min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 56px clamp(32px, 6vw, 104px); color: #fff; }
+.welcome-copy { max-width: 390px; padding-bottom: 8vh; }
+.welcome-eyebrow { margin: 0 0 12px; font-size: 11px; font-weight: 800; letter-spacing: .16em; opacity: .82; }
+.welcome-copy h2 { margin: 0 0 10px; font-family: Manrope, system-ui, sans-serif; font-size: clamp(32px, 4vw, 62px); line-height: 1.08; }
+.welcome-copy p:last-child { margin: 0; font-size: 16px; line-height: 1.6; opacity: .88; }
+.welcome-wave { display: none; }
+.login-card { width: 100%; max-width: 540px; align-self: center; justify-self: center; padding: 40px 48px; }
+.brand-mark { width: 36px; height: 36px; margin: 0 auto 19px; overflow: hidden; border-radius: 11px; background: var(--peach); }
+.brand-mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.login-heading { margin-bottom: 26px; text-align: center; }
+.login-heading h1 { margin: 0 0 6px; font-family: Manrope, system-ui, sans-serif; font-size: 23px; font-weight: 800; }
+.login-heading p { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
+.field { margin-bottom: 14px; }
+.field label { display: block; margin-bottom: 6px; color: var(--ink-soft); font-size: 12px; font-weight: 700; }
+.field input:not([type="checkbox"]) { width: 100%; height: 44px; padding: 11px 14px; color: var(--ink); border: 1px solid var(--line); border-radius: 12px; outline: none; background: transparent; font-size: 13.5px; transition: border-color .15s ease, background .15s ease; }
+.field input:not([type="checkbox"]):focus { border-color: var(--teal); background: transparent; }
+.password-wrap { position: relative; }
+.password-wrap input { padding-right: 58px !important; }
+.show-password { position: absolute; top: 50%; right: 10px; padding: 4px; color: var(--teal-deep); border: 0; background: transparent; font-size: 11px; font-weight: 700; transform: translateY(-50%); }
+.login-message { min-height: 0; margin: -6px 0 10px; color: #d64545; font-size: 12px; line-height: 1.4; }
+.login-message:not(:empty) { min-height: 17px; }
+.login-button { width: 100%; margin-top: 15px; min-height: 46px; padding: 12px 20px; color: #fff; border: 0; border-radius: 12px; background: var(--teal); font-family: Manrope, system-ui, sans-serif; font-size: 14px; font-weight: 700; transition: background .15s ease, opacity .15s ease; }
+.login-button:hover { background: var(--teal-deep); }
+.login-button:active { opacity: .85; }
+
+@media (max-width: 700px) {
+  .login-page { display: flex; flex-direction: column; }
+  .welcome-panel { min-height: 250px; width: 100%; }
+  .welcome-overlay { min-height: 250px; justify-content: flex-start; padding: 24px 24px 28px; }
+  .welcome-copy { padding: 22px 0 34px; }
+  .welcome-copy h2 { margin-bottom: 5px; font-size: 29px; }
+  .welcome-copy p:last-child { font-size: 13px; }
+  .welcome-wave { position: absolute; right: 0; bottom: -1px; left: 0; display: block; height: 46px; line-height: 0; }
+  .welcome-wave svg { display: block; width: 100%; height: 100%; }
+  .welcome-wave path { fill: var(--white); }
+  .login-card { max-width: 330px; padding: 27px 14px 32px; }
+  .brand-mark { width: 31px; height: 31px; margin-bottom: 14px; border-radius: 9px; }
+  .login-heading { margin-bottom: 17px; }
+  .login-heading h1 { margin-bottom: 4px; font-size: 19px; }
+  .login-heading p { font-size: 11px; }
+  .field { margin-bottom: 9px; }
+  .field label { margin-bottom: 4px; font-size: 10px; }
+  .field input:not([type="checkbox"]) { height: 40px; padding: 9px 10px; border-radius: 9px; font-size: 11.5px; }
+  .login-button { min-height: 42px; padding: 10px 14px; border-radius: 9px; font-size: 11.5px; }
+}
+
+@media (max-width: 480px) {
+  .welcome-panel, .welcome-overlay { min-height: 218px; }
+  .welcome-overlay { padding: 22px 20px 24px; }
+  .welcome-copy { padding: 14px 0 25px; }
+  .welcome-copy h2 { font-size: 26px; }
+  .login-card { max-width: 300px; padding: 23px 0 30px; }
+  .login-heading { margin-bottom: 20px; }
+  .login-heading h1 { font-size: 18px; }
+  .login-heading p { font-size: 10.5px; }
+}

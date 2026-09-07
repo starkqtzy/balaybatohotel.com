@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Balay Bato Hotel | Admin</title>
+<link rel="icon" type="image/jpeg" href="images/app_logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sources/admin/admin.css">
+<link rel="manifest" href="sources/app/webmanifest.manifest">
+
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand-row">
+      <div class="brand-mark">
+        <img src="images/app_logo.jpg" alt="Balay Bato logo">
+      </div>
+      <div class="brand-text">
+        <div class="name">Balay Bato</div>
+        <div class="sub">Admin Panel</div>
+      </div>
+    </div>
+    <nav class="side-nav" id="sideNav">
+      <button class="side-item" data-view="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        Dashboard
+      </button>
+      <button class="side-item" data-view="rooms">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v13"/><path d="M3 12h18"/><path d="M21 20V9a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v11"/><circle cx="17" cy="15.5" r="1"/></svg>
+        Rooms
+      </button>
+      <button class="side-item" data-view="sales">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+        Sales
+      </button>
+      <button class="side-item" data-view="settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+    </nav>
+    <div class="side-foot">
+      <button class="side-item logout" data-view="logout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <div class="main-shell">
+
+    <header class="topbar">
+      <div class="greet">
+        <div class="hi" id="mobileGreet">Good day</div>
+        <div class="who">Balay Bato Admin</div>
+      </div>
+      <div class="profile-wrap">
+        <button type="button" class="avatar profile-trigger" id="profileTrigger" aria-label="Open profile menu" aria-expanded="false" aria-controls="profileMenu">MR</button>
+        <div class="profile-menu" id="profileMenu" role="menu" hidden>
+          <div class="profile-summary">
+            <div class="profile-avatar">MR</div>
+            <div><strong>Admin</strong><span>Administrator</span></div>
+          </div>
+          <div class="profile-menu-actions">
+            <button type="button" class="profile-menu-item" id="profileButton" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              Profile
+            </button>
+            <button type="button" class="profile-menu-item logout-item" data-view="logout" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              Log out
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="view active" id="view-dashboard">
+        <div class="view-head">
+          <div>
+            <h1>Dashboard</h1>
+            <p>Here's what's happening at Balay Bato today.</p>
+          </div>
+        </div>
+
+        <div class="bento">
+          <div class="card hero-card span-2 row-2">
+            <div>
+              <div class="card-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                Today's snapshot
+              </div>
+              <div class="headline">18 of 24 rooms occupied — a steady Thursday.</div>
+              <div class="sub">Occupancy is up compared to last week.</div>
+            </div>
+            <div class="hero-stats">
+              <div><span class="v">₱42,300</span><span class="l">Revenue today</span></div>
+              <div><span class="v">7</span><span class="l">Check-ins left</span></div>
+              <div><span class="v">75%</span><span class="l">Occupancy</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v13"/><path d="M3 12h18"/><path d="M21 20V9a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v11"/></svg>
+              Room status
+            </div>
+            <div class="donut-wrap">
+              <svg class="donut" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#FFF2E5" stroke-width="4.5"/>
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#00C2C7" stroke-width="4.5" stroke-dasharray="75 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#ED6C00" stroke-width="4.5" stroke-dasharray="12 100" stroke-dashoffset="-75" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+              </svg>
+              <div class="donut-legend">
+                <span><i class="dot dot-occupied"></i>Occupied</span>
+                <span><i class="dot dot-maintenance"></i>Maintenance</span>
+                <span><i class="dot dot-available"></i>Available</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card tint">
+            <div class="card-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>
+              Front desk online
+            </div>
+            <div class="num sm">3 <span class="num-suffix">active</span></div>
+            <div class="foot-note">Last check-in logged 12 min ago</div>
+          </div>
+
+          <div class="card">
+            <div class="card-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+              Rooms by status
+            </div>
+            <div class="mini-bars">
+              <div class="mini-bar-row"><span class="lbl">Available</span><div class="mini-bar-track"><div class="mini-bar-fill available-fill"></div></div><span class="ct">6</span></div>
+              <div class="mini-bar-row"><span class="lbl">Occupied</span><div class="mini-bar-track"><div class="mini-bar-fill occupied-fill"></div></div><span class="ct">18</span></div>
+              <div class="mini-bar-row"><span class="lbl">Maintenance</span><div class="mini-bar-track"><div class="mini-bar-fill maintenance-fill"></div></div><span class="ct">2</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              Quick actions
+            </div>
+            <div class="qa-grid">
+              <button class="qa-btn" data-toast="Opening new booking…">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                New booking
+              </button>
+              <button class="qa-btn" type="button" onclick="openRoomForm()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/></svg>
+                Add room
+              </button>
+            </div>
+          </div>
+
+          <div class="card span-2">
+            <div class="card-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Needs your attention
+            </div>
+            <div class="task-list">
+              <div class="task-row"><span class="task-dot"></span><span class="t">Room 204 marked for maintenance — plumbing</span><span class="tm">1h ago</span></div>
+              <div class="task-row"><span class="task-dot"></span><span class="t">Front desk requested rate change for weekends</span><span class="tm">3h ago</span></div>
+              <div class="task-row"><span class="task-dot"></span><span class="t">Guest in Room 110 extended stay by 2 nights</span><span class="tm">5h ago</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-rooms">
+        <div class="view-head">
+          <div>
+            <h1>Rooms</h1>
+            <p>Add, edit, and remove rooms.</p>
+          </div>
+        </div>
+
+        <div class="rooms-toolbar">
+          <div class="pill-row" style="margin:0;" id="roomFilters">
+            <button class="pill active" data-status="all">All rooms</button>
+            <button class="pill" data-status="available">Available</button>
+            <button class="pill" data-status="occupied">Occupied</button>
+            <button class="pill" data-status="maintenance">Maintenance</button>
+          </div>
+          <button class="btn btn-accent" type="button" onclick="openRoomForm()">+ Add room</button>
+        </div>
+
+        <div class="modal-overlay" id="roomModal" aria-hidden="true">
+          <div class="card room-form-card" id="roomFormCard" role="dialog" aria-modal="true" aria-labelledby="roomFormTitle">
+            <div class="modal-header">
+              <div class="card-label" id="roomFormTitle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                New room
+              </div>
+              <button type="button" class="modal-close" aria-label="Close room form" onclick="closeRoomForm()">&times;</button>
+            </div>
+            <form id="roomForm" onsubmit="return submitRoomForm(event)" style="margin-top:12px;">
+              <div class="field">
+                <label>Room images</label>
+                <div class="img-upload" id="imgUpload">
+                  <label class="img-add">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                    <input type="file" accept="image/*" multiple style="display:none" onchange="handleImages(event)">
+                  </label>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Room number</label><input type="text" id="fRoomNo" placeholder="e.g. 402" required></div>
+                <div class="field"><label>Room type</label>
+                  <select id="fRoomType" required>
+                    <option value="">Select type</option>
+                    <option>Standard</option>
+                    <option>Deluxe Twin</option>
+                    <option>Garden Suite</option>
+                    <option>Family Room</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label>Rate per night (₱)</label><input type="number" id="fRate" placeholder="e.g. 2500" min="0" required></div>
+                <div class="field"><label>Capacity (pax)</label><input type="number" id="fCap" placeholder="e.g. 2" min="1" required></div>
+              </div>
+              <div class="field">
+                <label>Amenities</label>
+                <div class="amenity-grid" id="amenityGrid">
+                  <button type="button" class="amenity-chip" data-a="WiFi">WiFi</button>
+                  <button type="button" class="amenity-chip" data-a="Air conditioning">Air conditioning</button>
+                  <button type="button" class="amenity-chip" data-a="TV">TV</button>
+                  <button type="button" class="amenity-chip" data-a="Hot shower">Hot shower</button>
+                  <button type="button" class="amenity-chip" data-a="Balcony">Balcony</button>
+                  <button type="button" class="amenity-chip" data-a="Breakfast">Breakfast</button>
+                </div>
+              </div>
+              <input type="hidden" id="fRoomId" value="">
+              <div class="btn-row" style="margin-top:6px;">
+                <button type="submit" class="btn btn-primary">Save room</button>
+                <button type="button" class="btn btn-outline" onclick="closeRoomForm()">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="rooms-grid" id="roomsGrid"></div>
+      </section>
+
+      <section class="view" id="view-sales">
+        <div class="view-head">
+          <div>
+            <h1>Sales</h1>
+            <p>Revenue performance across periods.</p>
+          </div>
+        </div>
+
+        <div class="pill-row" id="salesTabs">
+          <button class="pill active" data-period="day">Day</button>
+          <button class="pill" data-period="week">Week</button>
+          <button class="pill" data-period="month">Month</button>
+          <button class="pill" data-period="year">Year</button>
+        </div>
+
+        <div class="sales-stat-row">
+          <div class="card">
+            <div class="card-label">Total sales</div>
+            <div class="num" id="salesTotal">₱42,300</div>
+            <div class="delta" id="salesDelta">▲ 8.2% vs previous</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Bookings</div>
+            <div class="num" id="salesBookings">14</div>
+            <div class="foot-note">completed &amp; ongoing</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Avg. booking value</div>
+            <div class="num" id="salesAvg">₱3,021</div>
+            <div class="foot-note">per reservation</div>
+          </div>
+        </div>
+
+        <div class="bento" style="margin-bottom:16px;">
+          <div class="card span-4 home-sales-card sales-trend-card">
+            <div class="home-sales-head">
+              <div class="card-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-5 3 3 5-7"/></svg>
+                Sales analytics
+              </div>
+              <span class="analytics-period" id="salesTrendPeriod">Today</span>
+            </div>
+            <div class="analytics-summary">
+              <div><strong id="salesTrendTotal"></strong><span id="salesTrendDelta"></span></div>
+              <div><strong id="salesTrendBookings"></strong><small>bookings</small></div>
+            </div>
+            <div class="line-chart-wrap sales-trend-wrap">
+              <svg id="salesTrendChart" viewBox="0 0 820 220" role="img" aria-label="Sales trend chart"></svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-settings">
+        <div class="view-head">
+          <div>
+            <h1>Settings</h1>
+            <p>Manage accounts and the admin app.</p>
+          </div>
+        </div>
+
+        <div class="settings-grid">
+          <div class="card">
+            <div class="card-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>
+              Your account
+            </div>
+            <form class="account-form" data-success-message="Admin profile updated">
+              <div class="field"><label>Full name</label><input type="text" value="Ma. Teresa Rosales"></div>
+              <div class="field"><label>Email</label><input type="email" value="teresa@balaybatohotel.com"></div>
+              <div class="field"><label>Phone</label><input type="tel" value="+63 917 000 1234"></div>
+              <div class="field"><label>New password</label><input type="password" placeholder="Leave blank to keep current"></div>
+              <button type="submit" class="btn btn-primary btn-block">Save changes</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <div class="card-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Front desk accounts
+            </div>
+            <div class="front-desk-list">
+              <div class="fd-account">
+                <div class="fd-avatar">JP</div>
+                <div class="fd-info"><div class="n">Jomar Pineda</div><div class="e">jomar@balaybatohotel.com</div></div>
+                <span class="fd-status"></span>
+              </div>
+              <div class="fd-account">
+                <div class="fd-avatar">LS</div>
+                <div class="fd-info"><div class="n">Liza Santos</div><div class="e">liza@balaybatohotel.com</div></div>
+                <span class="fd-status"></span>
+              </div>
+            </div>
+            <form class="add-staff-form" data-success-message="Front desk account added">
+              <div class="field"><label>New staff name</label><input type="text" placeholder="e.g. Carlo Reyes" required></div>
+              <div class="field"><label>Email</label><input type="email" placeholder="carlo@balaybatohotel.com" required></div>
+              <button type="submit" class="btn btn-outline btn-block">+ Add front desk account</button>
+            </form>
+          </div>
+
+          <div class="card app-download-card">
+            <div class="card-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              Admin app
+            </div>
+            <h3>Install as a native app</h3>
+            <p>Add Balay Bato Admin to your home screen or desktop for faster access — this is available for the Admin UI only, not the front desk view.</p>
+            <div class="btn-row">
+              <button class="btn btn-teal" data-mobile-install hidden>Install app</button>
+              <button class="btn btn-outline download-button" data-windows-install hidden>Download Windows app</button>
+            </div>
+            <div id="installStatus" data-install-status></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<nav class="bottom-nav" id="bottomNav">
+  <button class="nav-item active" data-view="dashboard">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+    <span class="navlabel">Dashboard</span>
+  </button>
+  <button class="nav-item" data-view="rooms">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v13"/><path d="M3 12h18"/><path d="M21 20V9a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v11"/></svg>
+    <span class="navlabel">Rooms</span>
+  </button>
+  <button class="nav-item" data-view="sales">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+    <span class="navlabel">Sales</span>
+  </button>
+  <button class="nav-item" data-view="settings">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    <span class="navlabel">Settings</span>
+  </button>
+  <button class="nav-item logout" data-view="logout">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+    <span class="navlabel">Logout</span>
+  </button>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script src="sources/shared/database.js"></script>
+<script src="sources/app/app.js"></script>
+<script src="sources/admin/admin.js"></script>
+
+</body>
+</html>

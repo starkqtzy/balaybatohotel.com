@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balay Bato Hotel | Admin Login</title>
+  <link rel="icon" type="image/jpeg" href="images/app_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sources/loginForm/admin_login.css">
+  <link rel="manifest" href="sources/app/webmanifest.manifest">
+</head>
+<body>
+  <main class="login-page">
+    <aside class="welcome-panel" aria-label="Balay Bato Hotel admin welcome message">
+      <div class="welcome-overlay">
+        <div class="welcome-copy">
+          <p class="welcome-eyebrow">ADMIN PORTAL</p>
+          <h2>Welcome back.</h2>
+          <p>Keep every part of your hotel running smoothly.</p>
+        </div>
+      </div>
+      <div class="welcome-wave" aria-hidden="true">
+        <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
+          <path d="M0,58 C120,5 230,90 360,48 C500,3 590,82 720,45 C860,5 950,88 1080,45 C1140,25 1175,30 1200,18 L1200,90 L0,90 Z"></path>
+        </svg>
+      </div>
+    </aside>
+
+    <section class="login-card" aria-labelledby="loginTitle">
+      <div class="brand-mark">
+        <img src="images/app_logo.jpg" alt="Balay Bato Hotel logo">
+      </div>
+
+      <div class="login-heading">
+        <h1 id="loginTitle">Welcome Back!</h1>
+        <p>Log in to manage sales, rooms, and your team.</p>
+      </div>
+
+      <form id="adminLoginForm" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="admin" autocomplete="username" required>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password" required>
+            <button type="button" class="show-password" id="showPassword" aria-label="Show password">Show</button>
+          </div>
+        </div>
+
+        <p class="login-message" id="loginMessage" role="alert" aria-live="polite"></p>
+        <button type="submit" class="login-button">Log in</button>
+      </form>
+
+      <div class="app-install-card" aria-label="Install Balay Bato Admin">
+        <strong>Admin app</strong>
+        <span>Install the Admin portal as an app on your phone or desktop.</span>
+        <button type="button" class="app-install-button" data-mobile-install hidden>Install app</button>
+        <button type="button" class="app-install-button" data-windows-install hidden>Download Windows app</button>
+        <small data-install-status></small>
+      </div>
+    </section>
+  </main>
+
+  <script src="sources/app/app.js"></script>
+  <script src="sources/loginForm/admin_login.js"></script>
+</body>
+</html>

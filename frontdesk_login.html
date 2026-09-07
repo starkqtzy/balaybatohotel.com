@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balay Bato Hotel | Front Desk Login</title>
+  <link rel="icon" type="image/jpeg" href="images/app_logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sources/loginForm/frontdesk_login.css">
+</head>
+<body>
+  <main class="login-page">
+    <aside class="welcome-panel" aria-label="Balay Bato Hotel welcome message">
+      <div class="welcome-overlay">
+        <div class="welcome-copy">
+          <p class="welcome-eyebrow">FRONT DESK PORTAL</p>
+          <h2>Welcome back.</h2>
+          <p>Manage every guest stay with ease.</p>
+        </div>
+      </div>
+      <div class="welcome-wave" aria-hidden="true">
+        <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
+          <path d="M0,58 C120,5 230,90 360,48 C500,3 590,82 720,45 C860,5 950,88 1080,45 C1140,25 1175,30 1200,18 L1200,90 L0,90 Z"></path>
+        </svg>
+      </div>
+    </aside>
+
+    <section class="login-card" aria-labelledby="loginTitle">
+      <div class="brand-mark">
+        <img src="images/app_logo.jpg" alt="Balay Bato Hotel logo">
+      </div>
+
+      <div class="login-heading">
+        <h1 id="loginTitle">Welcome Back!</h1>
+        <p>Log in to manage rooms, sales, and settings.</p>
+      </div>
+
+      <form id="frontdeskLoginForm" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="frontdesk" autocomplete="username" required>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password" required>
+            <button type="button" class="show-password" id="showPassword" aria-label="Show password">Show</button>
+          </div>
+        </div>
+
+        <p class="login-message" id="loginMessage" role="alert" aria-live="polite"></p>
+        <button type="submit" class="login-button">Log in</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="sources/loginForm/frontdesk_login.js"></script>
+</body>
+</html>
